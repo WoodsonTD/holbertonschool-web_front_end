@@ -1,0 +1,9 @@
+/* more of the same as 4 but red color to elements of red class that 
+are first children of body */
+body {
+    color: #3D3D3D;
+
+    > .red:first-child {
+        color: #FF0000;
+    }
+}

@@ -1,0 +1,13 @@
+/* mixin things */
+@mixin margin-leftright($left, $right) {
+    margin-left: $left;
+    margin-right: $right;
+}
+
+body {
+    @include margin-leftright(10px, 10px);
+}
+
+div {
+    @include margin-leftright(15px, 15px);
+}

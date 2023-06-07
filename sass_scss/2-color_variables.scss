@@ -1,0 +1,11 @@
+/* assinging more colors to more things */
+$text-color: #3D3D3D;
+$background-color: #6D6D6D;
+
+body, p {
+    color: $text-color;
+}
+
+body, h2 {
+    color: $background-color;
+}
