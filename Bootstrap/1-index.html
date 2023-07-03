@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>Holberton - Web Stack - Bootstrap</title>
+        <meta name="description" content="Bootstrap is a free and open-source CSS framework">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body class="text-center text-white">
+        <div class="row">
+                <!-- col specify the behavior for all devices -->
+                <!--bg-primary class is used to apply the primary color as the background color-->
+            <div class="col-lg bg-primary p-2">Primary</div>
+            <div class="col-lg bg-success p-2">Success</div>
+            <div class="col-lg bg-danger p-2">Danger</div>
+            <div class="col-lg bg-warning p-2">Warning</div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+                <!-- col-md specify the behavior for screen sizes >= 576px Screen < 576px: display like 4 lines in one column -->
+            <div class="col-sm bg-primary p-2">Primary</div>
+            <div class="col-sm bg-success p-2">Success</div>
+            <div class="col-sm bg-danger p-2">Danger</div>
+            <div class="col-sm bg-warning p-2">Warning</div>
+        </div>
+
+        <hr />
+
+            <div class="row">
+                <!-- The middle cell has 2 times the size of the first cell -->
+                <!-- Screen >= 992px: display like 3 columns in one line Screen < 992px: display like 3 lines in one column -->
+            <div class="col-lg-2 bg-primary p-2">Primary</div>
+            <div class="col-lg-4 bg-success p-2">Success</div>
+            <div class="col-lg-6 bg-danger p-2">Danger</div>
+        </div>
+
+
+        <hr />
+
+        <div class="row">
+            <div class="col-3 order-sm-4 order-md-3 order-lg-2 order-xl-1 bg-primary p-2">Primary</div>
+            <div class="col-3 order-sm-1 order-md-4 order-lg-3 order-xl-2 bg-success p-2">Success</div>
+            <div class="col-3 order-sm-2 order-md-1 order-lg-4 order-xl-3 bg-danger p-2">Danger</div>
+            <div class="col-3 order-sm-3 order-md-2 order-lg-1 order-xl-4 bg-warning p-2">Warning</div>
+        </div>
+
+        <hr/>
+
+        <div class="row">
+            <div class="col-md-2 bg-primary p-2">Primary</div>
+            <div class="col-md-2 offset-md-8 bg-success p-2">Success</div>
+        </div>
+
+
+        <hr/>
+
+        <div class="row">
+            <div class="col-md-2 bg-primary p-2">Primary</div>
+            <div class="col-md-2 offset-md-4 bg-success p-2">Success</div>
+            <div class="col-md-2 offset-md-2 bg-danger p-2">Danger</div>
+        </div>
+    </body>
+</html>
