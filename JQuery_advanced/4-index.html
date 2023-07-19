@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Task 1</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script type="application/javascript">
+    function createFamilyTree() {
+        $("body").append(
+            $("<table>").append(
+                $("<thead>").append(
+                    $("<tr>").append(
+                        $("<th>").text("Firstname"),
+                        $("<th>").text("Lastname")
+                    )
+                ),
+                $("<tbody>").append(
+                    $("<tr>").append(
+                        $("<td>").text("Guillaume"),
+                        $("<td>").text("Salva")
+                    ),
+                    $("<tr>").append(
+                        $("<td>").text("Paulette"),
+                        $("<td>").text("Salva")
+                    ),
+                    $("<tr>").append(
+                        $("<td>").text("Antoine"),
+                        $("<td>").text("Salva")
+                    )
+                )
+            )
+        );
+    }
+
+    function replaceFamilyTree() {
+        var tbody = $("<tbody>").append(
+            $("<tr>").append(
+                $("<td>").text("Gerard"),
+                $("<td>").text("Salva")
+            ),
+            $("<tr>").append(
+                $("<td>").text("Bonissa"),
+                $("<td>").text("Salva")
+            )
+        );
+        $("table tbody").replaceWith(tbody);
+    }
+    $(document).ready(function() {
+        createFamilyTree();
+        replaceFamilyTree();
+    });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

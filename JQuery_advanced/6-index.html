@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Task 1</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script type="application/javascript">
+        function createFamilyTree() {
+            $("body").append(
+                $("<table>").append(
+                    $("<thead>").append(
+                        $("<tr>").append(
+                            $("<th>").text("Firstname"),
+                            $("<th>").text("Lastname")
+                        )
+                    ),
+                    $("<tbody>")
+                )
+            );
+        }
+
+        function addNewMember(firstName, lastName, position) {
+            var row = $("<tr>").append(
+                $("<td>").text(firstName),
+                $("<td>").text(lastName),
+                $("<td>").text("(x)").addClass("remove-cell").click(function() {
+                    $(this).parent().remove();
+                })
+            );
+            if (position === "before") {
+                $("table tbody").prepend(row);
+            } else {
+                $("table tbody").append(row);
+            }
+        }
+    
+        function createForm() {
+            $("table").before(
+                $("<input>").attr("type", "text"),
+                $("<input>").attr("type", "text"),
+                $("<select>").append(
+                    $("<option>").attr("value", "before").text("Before"),
+                    $("<option>").attr("value", "after").text("After")
+                ),
+                $("<input>").attr("type", "submit").click(function() {
+                    var firstName = $("input[type='text']:first-of-type").val();
+                    var lastName = $("input[type='text']:nth-of-type(2)").val();
+                    var position = $("select").val();
+                    addNewMember(firstName, lastName, position);
+                    return false; // Prevent form submission
+                })
+            );
+        }
+
+        $(document).ready(function() {
+            createFamilyTree();
+            createForm();
+            addNewMember("Guillaume", "Salva");
+            addNewMember("Arielle", "Snizt");
+            addNewMember("Fanette", "Snizt");
+            addNewMember("Gerard", "Snizt");
+            addNewMember("Victor", "Salva");
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Task 7</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script type="application/javascript">
+        function createSearchForm() {
+            $("body").append(
+                $("<form>").append(
+                    $("<input>").attr("type", "text"),
+                    $("<input>").attr("type", "submit").val("Search"),
+                    $("<ul>").attr("id", "results")
+                ).submit(function(event) {
+                    event.preventDefault();
+                    var searchText = $(this).find("input[type='text']").val();
+                    queryWikipedia(searchText);
+                })
+            );
+        }
+
+        function addNewArticle(id, title, snippet) {
+            var li = $("<li>").append(
+                $("<p>").append(
+                    $("<span>").text(id + " - "),
+                    $("<b>").html(title)
+                ),
+                $("<p>").html(snippet)
+            );
+            $("#results").append(li);
+        }
+
+        function queryWikipedia(search) {
+            $.ajax({
+                url: "https://en.wikipedia.org/w/api.php",
+                data: {
+                    action: "query",
+                    list: "search",
+                    srsearch: search,
+                    format: "json"
+                },
+                dataType: "jsonp",
+                success: function(data) {
+                    $("#results").empty();
+                    data.query.search.forEach(function(result) {
+                        addNewArticle(result.pageid, result.title, result.snippet);
+                    });
+                },
+                error: function(error) {
+                    console.log("Error querying Wikipedia API: ", error);
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            createSearchForm();
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

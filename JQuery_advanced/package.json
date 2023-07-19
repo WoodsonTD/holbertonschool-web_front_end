@@ -1,0 +1,15 @@
+{
+  "name": "JQuery_advanced",
+  "version": "1.0.0",
+  "description": "- Amateur  - By: Johann Kerbrat, Engineering Manager at Uber Works  - Weight: 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.3"
+  }
+}
