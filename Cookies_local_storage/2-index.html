@@ -46,7 +46,10 @@
     }
 
     function getCookie(name) {
-        
+        var firstname = getCookie("firstname");
+        var email = getCookie("email");
+        var cookiesParagraph = document.getElementById("cookiesParagraph");
+        cookiesParagraph.innerText = "Email: " + email + " - Firstname: " + firstname;
     }
 </script>
 </body>
